@@ -1,3 +1,5 @@
-$(document).ready(function() {
-  $(document).find('.ytp-ce-element').remove();
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if (changeInfo.url) {
+    chrome.tabs.sendMessage(tabId, { tab: "change" });
+  }
 });
