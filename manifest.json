@@ -1,0 +1,18 @@
+{
+  "name": "Youtube Recommend Removal",
+  "version": "1.0.0",
+  "description": "Feel uncomfortable about youtube ending recommendation? Just install this mini extension and this annoyance will be disappeared!",
+  "manifest_version": 2,
+  "icons": {
+    "16": "images/sgw-16x16.png",
+    "128": "images/sgw-128x128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://youtube.com/*", "*://www.youtube.com/*"],
+      "js": ["third-party/jquery-3.3.1.min.js", "scripts/index.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
